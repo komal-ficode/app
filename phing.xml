@@ -35,7 +35,7 @@
         <mkdir dir="${builddir}/pdepend"/>        
     </target>
 <target name="phpcs" description="Coding Standards Analysis">
-    <exec executable="phpcs" output="/dev/null">
+    <exec executable="phpcs">
    <arg value="--report=checkstyle" />
    <arg value="--report-file=${builddir}/logs/checkstyle.xml" />
    <arg value="--standard=PSR2" />
