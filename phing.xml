@@ -35,10 +35,9 @@
         <mkdir dir="${builddir}/pdepend"/>        
     </target>
 <target name="phpcs" description="Coding Standards Analysis">
-    <exec command="phpcs --standard=PSR2 
+    <exec command="phpcs --standard=PSR1
                              --report=checkstyle 
                              --report-file=${builddir}/logs/checkstyle.xml
-                             --extensions=php
                              ${source}" 
               escape="false" />
 </target>
