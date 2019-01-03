@@ -7,7 +7,7 @@
      
     <fileset id="php-files" dir="${project.basedir}">
         <include name="**/*.php"/>
-        <exclude name="library/Zend/**"/>
+        <exclude name="vendor/**"/>
         <exclude name="tests/**"/>
     </fileset>
         
@@ -20,16 +20,12 @@
     </target>
    
 <target name="phpcs" description="Coding Standards Analysis">
- <phpcodesniffer standard="PSR2"
-      description="Run PSR2 standards over the codebase"
-      haltonerror="true">
-   <fileset dir="${builddir}/src">
-     <include name="**/*.php"/>
-   </fileset>
-   <fileset dir="${builddir}/tests">
-     <include name="**/*.php"/>
-   </fileset>
-   <formatter type="full" usefile="false"/>
- </phpcodesniffer>
+    <exec command="phpcs --standard=PSR2 
+                             --report=checkstyle 
+                             --report-file=${builddir}/logs/checkstyle.xml
+                             --include=src, tests
+                             --extensions=php
+                             ${source}" 
+              escape="false" />
 </target>
     </project>
