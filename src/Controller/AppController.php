@@ -53,10 +53,10 @@ class AppController extends Controller
          */
         //$this->loadComponent('Security');
     }
-  public function test()
-  {
-    if(1>2) {
-      echo 111;
+    public function test()
+    {
+        if (1>2) {
+          echo 111;
+        }
     }
-  }
 }
