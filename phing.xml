@@ -35,10 +35,11 @@
         <mkdir dir="${builddir}/pdepend"/>        
     </target>
 <target name="phpcs" description="Coding Standards Analysis">
-    <exec command="phpcs --standard=PSR1
-                             --report=checkstyle 
-                             --report-file=${builddir}/logs/checkstyle.xml
-                             ${source}" 
-              escape="false" />
+    <exec executable="phpcs" output="/dev/null">
+   <arg value="--report=checkstyle" />
+   <arg value="--report-file=${builddir}/logs/checkstyle.xml" />
+   <arg value="--standard=PSR2" />
+   <arg path="${source}" />
+  </exec>
 </target>
     </project>
