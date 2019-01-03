@@ -38,7 +38,6 @@
     <exec command="phpcs --standard=PSR2 
                              --report=checkstyle 
                              --report-file=${builddir}/logs/checkstyle.xml
-                             --include=src, tests
                              --extensions=php
                              ${source}" 
               escape="false" />
