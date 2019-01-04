@@ -13,8 +13,9 @@
         
     <target name="main" description="Start analyzing our application">
         <echo msg="Start Build" />
-        
+
         <phingCall target="phpcs" />
+        <phingCall target="phpmd" />
         
         <echo msg="Finished Build" />
     </target>
