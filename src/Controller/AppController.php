@@ -42,11 +42,18 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
-
+        if (1) {
+        }
         /*
          * Enable the following component for recommended CakePHP security settings.
          * see https://book.cakephp.org/3.0/en/controllers/components/security.html
          */
         //$this->loadComponent('Security');
+    }
+    public function test()
+    {
+        if (1>2) {
+            echo 111;
+        }
     }
 }
