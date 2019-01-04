@@ -16,6 +16,7 @@
 
         <phingCall target="phpcs" />
         <phingCall target="phpmd" />
+        <phingCall target="phpcpd" />
         
         <echo msg="Finished Build" />
     </target>
@@ -41,6 +42,12 @@
             <formatter type="xml" outfile="${builddir}/logs/pmd.xml"/>
         </phpmd>
     </target>  
+     <target name="phpcpd" description="Copy/Paste Detection">
+        <phpcpd>
+            <fileset refid="php-files"/>
+            <formatter type="pmd" outfile="${builddir}/logs/pmd-cpd.xml"/>
+        </phpcpd>
+    </target>
 <target name="phpcs" description="Coding Standards Analysis">
     <exec executable="phpcs">
    <arg value="--report=checkstyle" />
