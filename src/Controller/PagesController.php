@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 /**
  * CakePHP(tm) : Rapid Development Framework (https://cakephp.org)
  * Copyright (c) Cake Software Foundation, Inc. (https://cakefoundation.org)
@@ -22,13 +23,12 @@ use Cake\View\Exception\MissingTemplateException;
 /**
  * Static content controller
  *
- * This controller will render views from Template/Pages/
+ * This controller will render views from templates/Pages/
  *
  * @link https://book.cakephp.org/3.0/en/controllers/pages-controller.html
  */
 class PagesController extends AppController
 {
-
     /**
      * Displays a view
      *
