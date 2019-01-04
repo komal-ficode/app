@@ -34,6 +34,12 @@
         <mkdir dir="${builddir}/logs"/>
         <mkdir dir="${builddir}/pdepend"/>        
     </target>
+     <target name="phpmd" description="Generate pmd.xml using PHPMD">
+        <phpmd>
+            <fileset refid="php-files"/>
+            <formatter type="xml" outfile="${builddir}/logs/pmd.xml"/>
+        </phpmd>
+    </target>  
 <target name="phpcs" description="Coding Standards Analysis">
     <exec executable="phpcs">
    <arg value="--report=checkstyle" />
